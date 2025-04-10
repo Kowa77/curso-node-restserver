@@ -5,13 +5,13 @@ const cors = require('cors');
 class Server {
     constructor() {
         this.app = express();
-        this.port = process.env.PORT;
-        this.usuarioPath = '/api/usuarios';
+        this.port = process.env.PORT || 3000; // Default to 3000 if port is not set in environment variables
+        this.usuarioPath = '/api/usuarios'; // Define the path for the user API
 
         //Middlewares
-        this.middlewares();
+        this.middlewares(); 
         //Rutas de mi aplicación
-         this.routes(); // Comment out this line
+         this.routes(); 
     }
 
     middlewares() {
